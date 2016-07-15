@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --inline",
+    "webpack": "webpack --progress --colors",
     "deploy": "gh-pages -d dist"
   },
   "author": "Vincent Sung",
