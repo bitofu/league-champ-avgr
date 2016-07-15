@@ -44,8 +44,8 @@ class App extends React.Component {
       content = <div className='row'>
         <h1>Welcome!</h1>
         <div className='row'>
-          <p>Enter a summoner name to see recent Champion statistics</p>
-          <p>Currently this app only averages performance in ranked play for recent Champions</p>
+          <p>Enter a League of Legends summoner name and Region to see recent Champion statistics.</p>
+          <p>Currently this app only averages performance in ranked play for recent Champions.</p>
         </div>
       </div>
     } else {
