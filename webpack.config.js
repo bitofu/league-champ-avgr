@@ -9,6 +9,7 @@ module.exports = {
   },
 
   output: {
+    publicPath: '/league-champ-avgr/dist',
     filename: "bundle.js",
     path: __dirname + "/dist",
   },
