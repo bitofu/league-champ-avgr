@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/league-champ-avgr/dist";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -48,8 +48,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -86,7 +86,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
@@ -28407,8 +28407,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -28531,7 +28531,7 @@
 	        value: function render() {
 	          var content;
 	          if (this.state.searched === false) {
-	            content = _react2['default'].createElement('div', { className: 'row' }, _react2['default'].createElement('h1', null, 'Welcome!'), _react2['default'].createElement('div', { className: 'row' }, _react2['default'].createElement('p', null, 'Enter a summoner name to see recent Champion statistics'), _react2['default'].createElement('p', null, 'Currently this app only averages performance in ranked play for recent Champions')));
+	            content = _react2['default'].createElement('div', { className: 'row' }, _react2['default'].createElement('h1', null, 'Welcome!'), _react2['default'].createElement('div', { className: 'row' }, _react2['default'].createElement('p', null, 'Enter a League of Legends summoner name and Region to see recent Champion statistics.'), _react2['default'].createElement('p', null, 'Currently this app only averages performance in ranked play for recent Champions.')));
 	          } else {
 	            content = _react2['default'].createElement(_SummonerStats2['default'], { summonerName: this.state.summonerName, summonerId: this.state.summonerId, region: this.state.region });
 	          };
@@ -28562,7 +28562,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
@@ -28586,8 +28586,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -28685,7 +28685,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
@@ -28709,8 +28709,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -28812,7 +28812,7 @@
 	          // lowercase and strip white space
 	          $.ajax({
 	            type: 'GET',
-	            url: 'https://na.api.pvp.net/api/lol/' + this.state.region + '/v1.4/summoner/by-name/' + this.state.summonerName + '?api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://na.api.pvp.net/api/lol/' + this.state.region + '/v1.4/summoner/by-name/' + this.state.summonerName + '?api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          }).done(function (res) {
 	            _this.props.handleSearch(res[name].name, res[name].id.toString(), _this.state.region, true);
 	            _this.setState({
@@ -28844,7 +28844,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
@@ -38949,8 +38949,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -39042,10 +39042,10 @@
 
 	          $.when($.ajax({ // get ranked champion stats for summoner
 	            type: 'GET',
-	            url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v1.3/stats/by-summoner/' + this.props.summonerId + '/ranked?api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v1.3/stats/by-summoner/' + this.props.summonerId + '/ranked?api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          }), $.ajax({ // get ranked match history stats for summoner
 	            type: 'GET',
-	            url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v2.2/matchlist/by-summoner/' + this.props.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v2.2/matchlist/by-summoner/' + this.props.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          })).then(function (championsData, matchesData) {
 	            _this.setState({
 	              summonerName: _this.props.summonerName,
@@ -39062,10 +39062,10 @@
 
 	          $.when($.ajax({ // get ranked champion stats for summoner
 	            type: 'GET',
-	            url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v1.3/stats/by-summoner/' + nextProps.summonerId + '/ranked?api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v1.3/stats/by-summoner/' + nextProps.summonerId + '/ranked?api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          }), $.ajax({ // get ranked match history stats for summoner
 	            type: 'GET',
-	            url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v2.2/matchlist/by-summoner/' + nextProps.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v2.2/matchlist/by-summoner/' + nextProps.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          })).then(function (championsData, matchesData) {
 	            _this2.setState({
 	              summonerName: nextProps.summonerName,
@@ -39116,7 +39116,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
@@ -39141,8 +39141,8 @@
 
 	if (false) {
 	  (function () {
-	    var ReactHotAPI = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-api/modules/index.js"),
-	        RootInstanceProvider = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/RootInstanceProvider.js"),
+	    var ReactHotAPI = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-api/modules/index.js"),
+	        RootInstanceProvider = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/RootInstanceProvider.js"),
 	        ReactMount = require("react/lib/ReactMount"),
 	        React = require("react");module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
 	      return RootInstanceProvider.getRootInstances(ReactMount);
@@ -39232,7 +39232,7 @@
 
 	          $.when($.ajax({
 	            type: 'GET',
-	            url: 'https://global.api.pvp.net/api/lol/static-data/' + this.state.region + '/v1.2/champion/' + this.state.championStats.id + '?api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://global.api.pvp.net/api/lol/static-data/' + this.state.region + '/v1.2/champion/' + this.state.championStats.id + '?api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          })).then(function (championData) {
 	            _this.setState({
 	              champion: championData,
@@ -39248,7 +39248,7 @@
 	          var championStats = this.getChampionStats(nextProps);
 	          $.when($.ajax({
 	            type: 'GET',
-	            url: 'https://global.api.pvp.net/api/lol/static-data/' + context.region + '/v1.2/champion/' + championStats.id + '?api_key=' + ("[[RIOT_API_KEY]]")
+	            url: 'https://global.api.pvp.net/api/lol/static-data/' + context.region + '/v1.2/champion/' + championStats.id + '?api_key=' + ("RGAPI-270BB7C4-A016-44A7-95F3-470B000E65D7")
 	          })).then(function (championData) {
 	            _this2.setState({
 	              champion: championData,
@@ -39306,7 +39306,7 @@
 	  if (false) {
 	    (function () {
 	      var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
-	        var makeExportsHot = require("/Users/vMac/tofu/battlefy-riot-app/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
+	        var makeExportsHot = require("/Users/vMac/tofu/league-champ-avgr/node_modules/react-hot-loader/makeExportsHot.js");if (makeExportsHot(module, require("react"))) {
 	          foundReactClasses = true;
 	        }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
 	          module.hot.accept(function (err) {
