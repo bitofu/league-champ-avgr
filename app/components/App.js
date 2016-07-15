@@ -1,7 +1,8 @@
 import React from 'react';
 
-import SummonerSearch from './SummonerSearch'
-import SummonerStats from './SummonerStats'
+import Message from './Message';
+import SummonerSearch from './SummonerSearch';
+import SummonerStats from './SummonerStats';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,9 @@ class App extends React.Component {
     this.state = {
       summonerName: '',
       summonerId: '',
-      region: ''
+      region: '',
+      errorMessage: '',
+      searched: false
     };
   };
 
@@ -20,21 +23,43 @@ class App extends React.Component {
     };
   };
 
-  handleSearch(name, id, region) {
+  handleSearch(name, id, region, searched) {
     this.setState({
       summonerName: name,
       summonerId: id,
-      region: region
+      region: region,
+      searched: searched
+    });
+  };
+
+  handleError(errorMessage) {
+    this.setState({
+      errorMessage: errorMessage
     });
   };
 
   render() {
+    var content;
+    if (this.state.searched === false) {
+      content = <div className='row'>
+        <h1>Welcome!</h1>
+        <div className='row'>
+          <p>Enter a summoner name to see recent Champion statistics</p>
+          <p>Currently this app only averages performance in ranked play for recent Champions</p>
+        </div>
+      </div>
+    } else {
+      content = <SummonerStats summonerName={this.state.summonerName} summonerId={this.state.summonerId} region={this.state.region} />
+    };
+    if (this.state.errorMessage !== '') {
+      content = <Message message={this.state.errorMessage} />
+    }
+
     return (
       <div id='app'>
         <div className='container'>
-          <SummonerSearch handleSearch={this.handleSearch.bind(this)} />
-          <h1>{this.state.summonerName}</h1>
-          <SummonerStats summonerName={this.state.summonerName} summonerId={this.state.summonerId} region={this.state.region} />
+          <SummonerSearch handleSearch={this.handleSearch.bind(this)} handleError={this.handleError.bind(this)} />
+          {content}
         </div>
       </div>
     );

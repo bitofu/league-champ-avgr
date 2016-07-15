@@ -29,13 +29,13 @@ class SummonerSearch extends React.Component {
       type: 'GET',
       url: 'https://na.api.pvp.net/api/lol/' + this.state.region + '/v1.4/summoner/by-name/' + this.state.summonerName + '?api_key=' + process.env.RIOT_API_KEY
     }).done((res) => {
-      this.props.handleSearch(res[name].name, res[name].id.toString(), this.state.region);
+      this.props.handleSearch(res[name].name, res[name].id.toString(), this.state.region, true);
       this.setState({
         summonerName: ''
       });
     }).fail((res) => {
-      // add error message
-      console.log(res)
+      // need to handle error better
+      this.props.handleError('Summoner not found.')
     });
   };
 

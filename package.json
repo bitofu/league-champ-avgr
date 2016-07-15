@@ -1,7 +1,7 @@
 {
-  "name": "battlefy-riot-app",
+  "name": "lol-champ-avgr",
   "version": "0.0.1",
-  "description": "battlefy tech test with riot api ",
+  "description": "league of legends champion average performance",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --inline"

@@ -17,7 +17,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': process.env.NODE_ENV || '"development"',
-        'RIOT_API_KEY': '"RIOT KEY GOES HERE"'
+        'RIOT_API_KEY': '"[[RIOT_API_KEY]]"'
       }
     }),
     new webpack.ProvidePlugin({
