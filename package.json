@@ -14,7 +14,6 @@
   "private": false,
   "devDependencies": {
     
-    
   },
   "dependencies": {
     "babel-core": "^5.8.22",
