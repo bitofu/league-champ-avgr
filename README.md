@@ -5,9 +5,9 @@
 Don't forget to replace `RIOT_API_KEY` in `config.js` with your own API key
 
     $ npm run webpack
-    $ npm run development
+    $ npm run dev
     $ Server is listening on localhost:3000
 
 Deployment
   
-    $ npm run production
+    $ git push heroku master
