@@ -9,7 +9,6 @@ app.use(express.static(__dirname + '/public'));
 app.get('/get-summoner', function (req, res) {
   var name = req.query.summonerName.trim().toLowerCase().replace(' ', '');
   console.log('get-summoner: ' + name)
-  console.log('https://na.api.pvp.net/api/lol/' + req.query.region + '/v1.4/summoner/by-name/' + name + '?api_key=' + process.env.RIOT_API_KEY)
   fetch('https://na.api.pvp.net/api/lol/' + req.query.region + '/v1.4/summoner/by-name/' + name + '?api_key=' + process.env.RIOT_API_KEY)
     .then(function(response) {
       if (response.status !== 200) {
