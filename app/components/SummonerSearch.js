@@ -1,4 +1,5 @@
 import React from 'react';
+var request = new XMLHttpRequest();
 
 class SummonerSearch extends React.Component {
   constructor(props) {
@@ -23,20 +24,35 @@ class SummonerSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('submitting')
     let name = this.state.summonerName.trim().toLowerCase().replace(' ', '');
     // lowercase and strip white space
-    $.ajax({
-      type: 'GET',
-      url: 'https://na.api.pvp.net/api/lol/' + this.state.region + '/v1.4/summoner/by-name/' + this.state.summonerName + '?api_key=' + process.env.RIOT_API_KEY
-    }).done((res) => {
-      this.props.handleSearch(res[name].name, res[name].id.toString(), this.state.region, true);
-      this.setState({
-        summonerName: ''
-      });
-    }).fail((res) => {
-      // need to handle error better
-      this.props.handleError('Summoner not found.')
-    });
+    request.open('GET', '/summoner/?summonerName=' + this.state.summonerName, true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        console.log('successful request')
+        console.log(request.responseText);
+      } else {
+        // error from server
+      };
+    };
+    request.onerror = function() {
+      // connection error
+    };
+    request.send();
+    // $.ajax({
+    //   type: 'GET',
+    //   url: '/summoner/?summonerName=' + this.state.summonerName
+    // }).done((res) => {
+    //   console.log(res)
+    //   // this.props.handleSearch(res[name].name, res[name].id.toString(), this.state.region, true);
+    //   this.setState({
+    //     summonerName: ''
+    //   });
+    // }).fail((res) => {
+    //   // need to handle error better
+    //   this.props.handleError('Summoner not found.')
+    // });
   };
 
   render() {
