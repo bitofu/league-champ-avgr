@@ -13,6 +13,12 @@ module.exports = {
     path: __dirname + "/public",
     publicPath: __dirname + '/public',
   },
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      fetch: 'node-fetch'
+    })
+  ],
  
   module: {
     loaders: [
@@ -34,6 +40,7 @@ module.exports = {
       // Any png-image or woff-font below or equal to 100K will be converted 
       // to inline base64 instead
       { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, loader: 'url-loader?limit=100000' },
+      { test: /\.json$/, loader: "json-loader"},
     ],
   }
 };
