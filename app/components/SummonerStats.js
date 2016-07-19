@@ -41,7 +41,7 @@ class SummonerStats extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('Fetch Error :-S', err);
+        console.log('[SummonerStats] Fetch Error :-S', err);
       });
   };
 

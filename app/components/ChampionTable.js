@@ -19,7 +19,7 @@ class ChampionTable extends React.Component {
   };
 
   componentWillReceiveProps(nextProps, context) {
-    let championStats = this.findChampion(nextProps);
+    let championStats = this.findChampion(nextProps.match, nextProps.champions);
     this.getChampion(context.region, championStats)
   };
 
@@ -42,7 +42,7 @@ class ChampionTable extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('Fetch Error :-S', err);
+        console.log('[ChampionTable] Fetch Error :-S', err);
       });
   };
 

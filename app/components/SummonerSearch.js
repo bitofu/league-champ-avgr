@@ -34,13 +34,14 @@ class SummonerSearch extends React.Component {
         return response.json()
       })
       .then((data) => {
+        console.log('setting state for ', data.name)
         this.props.handleSearch(data.name, data.id.toString(), this.state.region, true);
         this.setState({
           summonerName: ''
         });
       })
       .catch((err) => {
-        console.log('Fetch Error :-S', err);
+        console.log('[SummonerSearch] Fetch Error :-S', err);
       });
   };
 
