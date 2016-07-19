@@ -6,7 +6,6 @@ var fetch = require('node-fetch');
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(__dirname + '/public'));
 
-
 app.get('/get-summoner', function (req, res) {
   var name = req.query.summonerName.trim().toLowerCase().replace(' ', '');
   console.log('get-summoner: ' + name)
