@@ -22,7 +22,7 @@ class SummonerStats extends React.Component {
   };
 
   getSummonerStats(region, id) {
-    fetch('./get-summoner-stats/?region=' + region + '&summonerId=' + id)
+    fetch(window.location.href + 'get-summoner-stats/?region=' + region + '&summonerId=' + id)
       .then((response) => {
         if (response.status !== 200) {
           // do error stuff

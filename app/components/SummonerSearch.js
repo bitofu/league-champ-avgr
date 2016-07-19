@@ -23,7 +23,7 @@ class SummonerSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    fetch('./get-summoner/?region=' + this.state.region + '&summonerName=' + this.state.summonerName)
+    fetch(window.location.href + 'get-summoner/?region=' + this.state.region + '&summonerName=' + this.state.summonerName)
       .then((response) => {
         if (response.status !== 200) {
           // do error stuff

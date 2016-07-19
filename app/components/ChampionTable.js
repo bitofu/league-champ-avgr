@@ -24,7 +24,7 @@ class ChampionTable extends React.Component {
   };
 
   getChampion(region, championStats) {
-    fetch('./get-champion/?region=' + region + '&championId=' + championStats.id)
+    fetch(window.location.href + 'get-champion/?region=' + region + '&championId=' + championStats.id)
       .then((response) => {
         if (response.status !== 200) {
           // do error stuff
