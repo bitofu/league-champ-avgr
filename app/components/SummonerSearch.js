@@ -34,7 +34,6 @@ class SummonerSearch extends React.Component {
         return response.json()
       })
       .then((data) => {
-        console.log('setting state for ', data.name)
         this.props.handleSearch(data.name, data.id.toString(), this.state.region, true);
         this.setState({
           summonerName: ''
