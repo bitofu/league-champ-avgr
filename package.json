@@ -7,7 +7,7 @@
     "start dev": "webpack-dev-server --hot --inline",
     "webpack": "webpack --progress --colors --watch",
     "dev": "NODE_ENV=development nodemon server.js",
-    "production": "NODE_ENV=production nodemon server.js"
+    "production": "webpack --progress --colors && NODE_ENV=production nodemon server.js"
   },
   "author": "Vincent Sung",
   "license": "MIT",
