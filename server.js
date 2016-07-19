@@ -6,6 +6,10 @@ var fetch = require('node-fetch');
 app.set('port', process.env.PORT || 3000);
 app.use(express.static('dist'));
 
+app.get('/', function (req, res) {
+  res.sendfile('dist/index.html');
+});
+
 app.get('/get-summoner', function (req, res) {
   var name = req.query.summonerName.trim().toLowerCase().replace(' ', '');
   console.log('get-summoner: ' + name)
