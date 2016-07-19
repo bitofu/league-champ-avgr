@@ -1,5 +1,4 @@
 import React from 'react';
-var request = new XMLHttpRequest();
 
 class SummonerSearch extends React.Component {
   constructor(props) {
@@ -24,35 +23,25 @@ class SummonerSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('submitting')
-    let name = this.state.summonerName.trim().toLowerCase().replace(' ', '');
-    // lowercase and strip white space
-    request.open('GET', '/summoner/?summonerName=' + this.state.summonerName, true);
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        console.log('successful request')
-        console.log(request.responseText);
-      } else {
-        // error from server
-      };
-    };
-    request.onerror = function() {
-      // connection error
-    };
-    request.send();
-    // $.ajax({
-    //   type: 'GET',
-    //   url: '/summoner/?summonerName=' + this.state.summonerName
-    // }).done((res) => {
-    //   console.log(res)
-    //   // this.props.handleSearch(res[name].name, res[name].id.toString(), this.state.region, true);
-    //   this.setState({
-    //     summonerName: ''
-    //   });
-    // }).fail((res) => {
-    //   // need to handle error better
-    //   this.props.handleError('Summoner not found.')
-    // });
+    fetch('./get-summoner/?region=' + this.state.region + '&summonerName=' + this.state.summonerName)
+      .then((response) => {
+        if (response.status !== 200) {
+          // do error stuff
+          console.log('Looks like there was a problem searching for the summoner. Status Code: ' + response.status);
+          return
+        };
+
+        return response.json()
+      })
+      .then((data) => {
+        this.props.handleSearch(data.name, data.id.toString(), this.state.region, true);
+        this.setState({
+          summonerName: ''
+        });
+      })
+      .catch((err) => {
+        console.log('Fetch Error :-S', err);
+      });
   };
 
   render() {

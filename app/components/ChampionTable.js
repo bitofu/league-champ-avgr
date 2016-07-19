@@ -3,7 +3,7 @@ import React from 'react';
 class ChampionTable extends React.Component {
   constructor(props, context) {
     super(props);
-    let championStats = this.getChampionStats(this.props);
+    let championStats = this.findChampion(this.props.match, this.props.champions);
 
     this.state = {
       region: context.region,
@@ -15,38 +15,40 @@ class ChampionTable extends React.Component {
   };
 
   componentDidMount() {
-    $.when(
-      $.ajax({
-        type: 'GET',
-        url: 'https://global.api.pvp.net/api/lol/static-data/' + this.state.region + '/v1.2/champion/' + this.state.championStats.id + '?api_key=' + process.env.RIOT_API_KEY
-      })
-    ).then((championData) => {
-      this.setState({
-        champion: championData,
-        championAvg: this.getChampionAvg(this.state.championStats)
-      });
-    });
+    this.getChampion(this.state.region, this.state.championStats)
   };
 
   componentWillReceiveProps(nextProps, context) {
-    let championStats = this.getChampionStats(nextProps);
-    $.when(
-      $.ajax({
-        type: 'GET',
-        url: 'https://global.api.pvp.net/api/lol/static-data/' + context.region + '/v1.2/champion/' + championStats.id + '?api_key=' + process.env.RIOT_API_KEY
-      })
-    ).then((championData) => {
-      this.setState({
-        champion: championData,
-        championStats: championStats,
-        championAvg: this.getChampionAvg(championStats)
-      });
-    });
+    let championStats = this.findChampion(nextProps);
+    this.getChampion(context.region, championStats)
   };
 
-  getChampionStats(props) {
-    return props.champions.find((champion) => {
-      if (champion.id === props.match.champion) {
+  getChampion(region, championStats) {
+    fetch('./get-champion/?region=' + region + '&championId=' + championStats.id)
+      .then((response) => {
+        if (response.status !== 200) {
+          // do error stuff
+          console.log('Looks like there was a problem getting the summoner stats. Status Code: ' + response.status);
+          return
+        };
+
+        return response.json()
+      })
+      .then((data) => {
+        this.setState({
+          champion: data,
+          championStats: championStats,
+          championAvg: this.getChampionAvg(championStats)
+        });
+      })
+      .catch((err) => {
+        console.log('Fetch Error :-S', err);
+      });
+  };
+
+  findChampion(match, champions) {
+    return champions.find((champion) => {
+      if (champion.id === match.champion) {
         return champion
       };
     });
@@ -65,6 +67,7 @@ class ChampionTable extends React.Component {
   }
 
   render() {
+    // need some logic to render a loading page (seeing '//NaN' is ugly) as data is fetched
     return (
       <div className='three columns'>
         <table className='u-full-width'>

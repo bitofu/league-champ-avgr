@@ -12,27 +12,17 @@ module.exports = {
     filename: "bundle.js",
     path: __dirname + "/dist",
   },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ],
  
   module: {
     loaders: [
-      {
-        test: /\.js$/,
+      { test: /\.js$/,
         exclude: /node_modules/,
         loaders: ["babel-loader"],
       },
-      {
-        test: /\.html$/,
+      { test: /\.html$/,
         loader: "file?name=[name].[ext]",
       },
-      {
-        test: /\.js$/,
+      { test: /\.js$/,
         exclude: /node_modules/,
         loaders: ["react-hot", "babel-loader"],
       },
@@ -42,7 +32,7 @@ module.exports = {
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       // Any png-image or woff-font below or equal to 100K will be converted 
       // to inline base64 instead
-      { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, loader: 'url-loader?limit=100000' }
+      { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, loader: 'url-loader?limit=100000' },
     ],
   }
 };

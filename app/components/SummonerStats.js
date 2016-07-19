@@ -14,43 +14,35 @@ class SummonerStats extends React.Component {
   };
 
   componentDidMount() {
-    $.when(
-      $.ajax({ // get ranked champion stats for summoner
-        type: 'GET',
-        url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v1.3/stats/by-summoner/' + this.props.summonerId + '/ranked?api_key=' + process.env.RIOT_API_KEY
-      }),
-      $.ajax({  // get ranked match history stats for summoner
-        type: 'GET',
-        url: 'https://na.api.pvp.net/api/lol/' + this.props.region + '/v2.2/matchlist/by-summoner/' + this.props.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + process.env.RIOT_API_KEY
-      })
-    ).then((championsData, matchesData) => {
-      this.setState({
-        summonerName: this.props.summonerName,
-        champions: championsData[0].champions,
-        matches: matchesData[0].matches,
-        recentMatches: this.getRecent(matchesData[0].matches)
-      });
-    });
+    this.getSummonerStats(this.props.region, this.props.summonerId);
   };
 
   componentWillReceiveProps(nextProps) {
-    $.when(
-      $.ajax({ // get ranked champion stats for summoner
-        type: 'GET',
-        url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v1.3/stats/by-summoner/' + nextProps.summonerId + '/ranked?api_key=' + process.env.RIOT_API_KEY
-      }),
-      $.ajax({  // get ranked match history stats for summoner
-        type: 'GET',
-        url: 'https://na.api.pvp.net/api/lol/' + nextProps.region + '/v2.2/matchlist/by-summoner/' + nextProps.summonerId + '?rankedQueues=TEAM_BUILDER_DRAFT_RANKED_5x5,RANKED_SOLO_5x5,RANKED_TEAM_3x3,RANKED_TEAM_5x5&api_key=' + process.env.RIOT_API_KEY
+    this.getSummonerStats(nextProps.region, nextProps.summonerId);
+  };
+
+  getSummonerStats(region, id) {
+    fetch('./get-summoner-stats/?region=' + region + '&summonerId=' + id)
+      .then((response) => {
+        if (response.status !== 200) {
+          // do error stuff
+          console.log('Looks like there was a problem getting the summoner stats. Status Code: ' + response.status);
+          return
+        };
+
+        return response.json()
       })
-    ).then((championsData, matchesData) => {
-      this.setState({
-        summonerName: nextProps.summonerName,
-        champions: championsData[0].champions,
-        matches: matchesData[0].matches,
-        recentMatches: this.getRecent(matchesData[0].matches)
+      .then((data) => {
+        this.setState({
+          summonerName: this.props.summonerName,
+          champions: data.champions,
+          matches: data.matches,
+          recentMatches: this.getRecent(data.matches)
+        });
+      })
+      .catch((err) => {
+        console.log('Fetch Error :-S', err);
       });
-    });
   };
 
   getRecent(matches) {
