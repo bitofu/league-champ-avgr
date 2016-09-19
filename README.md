@@ -2,7 +2,7 @@
 
     $ npm install
 
-Don't forget to replace `RIOT_API_KEY` in `config.js` with your own API key
+Don't forget to make a `.env` file like the `.env.exanple` and replace `RIOT_API_KEY` in `.env` with your own API key
 
     $ npm run webpack
     $ npm run dev
